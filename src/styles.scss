@@ -1,13 +1,48 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+$maincolor: gold;
+$contrastcolor: gray;
+$mainFont: 'Garamond';
+
+@mixin gray-text-gold-bg {
+  color: $contrastcolor;
+  background-color: $maincolor;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@mixin gold-text-gray-bg {
+  color: $maincolor;
+  background-color: $contrastcolor;
+}
+
+.Header {
+  @include gray-text-gold-bg;
+  font-family: $mainFont;
+  display: flex;
+  justify-content: flex-start;
+
+  a{
+    @include gray-text-gold-bg;
+
+    h1{
+      margin: 10px;
+      font-size: large;
+    }
+  }
+}
+
+img {
+  height: 30%;
+  width: 30%;
+  border-radius: 60px;
+}
+
+.Form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  min-height: 10rem;
+  max-width: 7rem;
+  margin: 5rem auto;
+  input[type='submit'] {
+    align-self: flex-start;
+  }
 }
